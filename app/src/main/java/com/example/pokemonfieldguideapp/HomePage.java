@@ -107,7 +107,7 @@ public class HomePage extends Fragment {
                         try {
                             //Toast.makeText(getContext(), "JSON Launched", Toast.LENGTH_LONG).show();
                             //Log.d("name", "name");
-                            pokeParser(response);//call the parser function to parse the data from the json response
+                            pokeParser(response);
 
 
                         } catch (JSONException e) {
@@ -115,13 +115,12 @@ public class HomePage extends Fragment {
                         }
                     }
                 }, error -> name = "Error:" + error.toString());//some sort of error display
-        // Add the request to the RequestQueue.
         queue.add(pokeRequest);
     }
 
-    void pokeParser(JSONObject response) throws JSONException {//this is the JSON parsing method, this needs to be custom made to match your JSON and data needs
-        name = response.getString("name");//use getString to extract strings
-        id = response.getInt("id");//use getInt to extract ints
+    void pokeParser(JSONObject response) throws JSONException {//this is the JSON parsing method
+        name = response.getString("name");
+        id = response.getInt("id");
         JSONObject sprites = response.getJSONObject("sprites");
         spriteUrl = sprites.getString("front_default");
         resultsArray = response.getJSONArray("stats");
@@ -144,22 +143,6 @@ public class HomePage extends Fragment {
         spd = String.valueOf(statObject.getInt("base_stat"));
         spd = "Speed: " + spd;
         //Toast.makeText(getContext(), "JSON Launched", Toast.LENGTH_LONG).show();
-
-        //sprites = response.getJSONObject("sprites");//get the object first..
-        //spritesUrl = sprites.getString("front_default");//..then get the string from the object
-
-        //abilitiesArray = response.getJSONArray("abilities");
-        //for (int i = 0; i < abilitiesArray.length(); i++) {
-
-            // store each object in JSONObject
-            //JSONObject abilityObj = abilitiesArray.getJSONObject(i);
-
-            //grab the nested object from the outer json object, mine is called "ability"
-            //JSONObject abilityObjInner = abilityObj.getJSONObject("ability");
-
-            //now we finally have access to get field value from JSONObject using get() method
-            //abilitiesTxt = abilitiesTxt + (i + 1) + ":" + abilityObjInner.getString("name") + "\n";//ability name is a string
-       // }
     }
 
     void pokeFetchSequencer(){
@@ -169,12 +152,12 @@ public class HomePage extends Fragment {
             public void run(){
                 getActivity().runOnUiThread(() -> uiUpdater());
             }
-        }, 1000);
+        }, 200);
     }
 
     void uiUpdater() {
         pokeName.setText(name);
-        pokeID.setText(String.valueOf(id));//must cast integer to string, setText only handles strings
+        pokeID.setText(String.valueOf(id));
         pokeHP.setText(String.valueOf(hp));
         pokeATK.setText(String.valueOf(atk));
         pokeDEF.setText(String.valueOf(def));
