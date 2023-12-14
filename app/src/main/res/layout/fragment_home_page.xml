@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp">
+
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/search_pokemon"
+            android:background="@color/white"
+            app:queryHint="Type in Pokemon name or ID #"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/search_button"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/card"
+        android:text="Search"
+        android:textSize="20sp"
+        android:translationX="130dp" />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/search_button"
+        android:id="@+id/pokeImage"
+        android:translationX="105dp"/>
+
+    <TextView
+        android:id="@+id/pName"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_below="@id/pokeImage"
+        android:layout_marginHorizontal="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="Enter Pokemon's name or ID above"/>
+
+    <TextView
+        android:id="@+id/pID"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@id/pName"
+        android:textSize="15sp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:layout_marginHorizontal="85dp"
+        android:text="#000"/>
+
+    <TextView
+        android:id="@+id/baseHP"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@id/pID"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:text="HP: ???"/>
+
+    <TextView
+        android:id="@+id/baseATK"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@id/baseHP"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:text="Attack: ???"/>
+
+    <TextView
+        android:id="@+id/baseDEF"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@id/baseATK"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:text="Defense: ???"/>
+
+    <TextView
+        android:id="@+id/spATK"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@id/baseDEF"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:text="Sp. ATK: ???"/>
+
+    <TextView
+        android:id="@+id/spDEF"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@id/spATK"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:text="Sp. DEF: ???"/>
+
+    <TextView
+        android:id="@+id/baseSPD"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@id/spDEF"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:text="Speed: ???"/>
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="Save"
+        android:textSize="20sp"
+        android:translationX="155dp"
+        android:layout_marginTop="560dp"
+        android:backgroundTint="@color/red"/>
+
+
+
+
+
+
+
+</RelativeLayout>
